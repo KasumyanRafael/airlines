@@ -22,13 +22,13 @@ namespace airlines
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            string ConnectionStr = "Data Source=127.0.0.1;Port=3306;User ID=root;Password=Kolobok168259;database=mysql";
+            string ConnectionStr = "Data Source=127.0.0.1;Port=3306;User ID=root;Password=Aa123456;database=mysql";
             MySqlConnection connection = new MySqlConnection(ConnectionStr);
             connection.Open();
             MySqlCommand cmd = new MySqlCommand("CREATE SCHEMA `airline`",connection);
             cmd.ExecuteNonQuery();
             connection.Close();
-            string newConnectionStr= "Data Source=127.0.0.1;Port=3306;User ID=root;Password=Kolobok168259;database=airline";
+            string newConnectionStr= "Data Source=127.0.0.1;Port=3306;User ID=root;Password=Aa123456;database=airline";
             MySqlConnection newconnection = new MySqlConnection(newConnectionStr);
             newconnection.Open();
             MySqlCommand newcmd = new MySqlCommand("CREATE TABLE `airline`.`typesofplanes` (\r\n  `id` INT NOT NULL AUTO_INCREMENT,\r\n  `type` VARCHAR(45) NOT NULL,\r\n  PRIMARY KEY (`id`))",newconnection);
@@ -58,7 +58,7 @@ namespace airlines
             newcmd = new MySqlCommand("INSERT INTO `airline`.`routes` (`number`,`departAndLand`) VALUES ('fv162','Санкт-Петербург-Магадан')", newconnection);
             newcmd.ExecuteNonQuery();
             newconnection.Close();
-            string connect = "Data Source=127.0.0.1;Port=3306;User ID=root;Password=Kolobok168259;database=airline";
+            string connect = "Data Source=127.0.0.1;Port=3306;User ID=root;Password=Aa123456;database=airline";
             connection = new MySqlConnection(connect);
             connection.Open();
             string sql = "select * from airline.typesofplanes";
@@ -95,7 +95,7 @@ namespace airlines
         {
             comboBoxIds.Items.Clear();
             listBoxtable.Items.Clear();
-            string connect = "Data Source=127.0.0.1;Port=3306;User ID=root;Password=Kolobok168259;database=airline";
+            string connect = "Data Source=127.0.0.1;Port=3306;User ID=root;Password=Aa123456;database=airline";
             MySqlConnection connection = new MySqlConnection(connect);
             connection.Open();
             string plane=comboBoxPlane.SelectedItem.ToString();
@@ -135,7 +135,7 @@ namespace airlines
         {
             listBoxtable.Items.Clear();
             int id = Convert.ToInt32(comboBoxIds.SelectedItem);
-            string connect = "Data Source=127.0.0.1;Port=3306;User ID=root;Password=Kolobok168259;database=airline";
+            string connect = "Data Source=127.0.0.1;Port=3306;User ID=root;Password=Aa123456;database=airline";
             MySqlConnection connection = new MySqlConnection(connect);
             connection.Open();
             MySqlCommand cmd = new MySqlCommand($"delete from airline.timetable where id={id}", connection);
@@ -160,7 +160,7 @@ namespace airlines
         {
             listBoxtable.Items.Clear();
             int id = Convert.ToInt32(comboBoxIds.SelectedItem);
-            string connect = "Data Source=127.0.0.1;Port=3306;User ID=root;Password=Kolobok168259;database=airline";
+            string connect = "Data Source=127.0.0.1;Port=3306;User ID=root;Password=Aa123456;database=airline";
             MySqlConnection connection = new MySqlConnection(connect);
             connection.Open();
             string plane = comboBoxRPlane.SelectedItem.ToString();
